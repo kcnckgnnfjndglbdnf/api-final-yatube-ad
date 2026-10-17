@@ -5,7 +5,6 @@ User = get_user_model()
 
 
 class Group(models.Model):
-
     title = models.CharField('Название', max_length=200)
     slug = models.SlugField('Идентификатор', unique=True)
     description = models.TextField('Описание')
@@ -19,7 +18,6 @@ class Group(models.Model):
 
 
 class Post(models.Model):
-
     text = models.TextField('Текст')
     pub_date = models.DateTimeField(
         'Дата публикации',
@@ -54,7 +52,6 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -81,7 +78,6 @@ class Comment(models.Model):
 
 
 class Follow(models.Model):
-
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -100,7 +96,6 @@ class Follow(models.Model):
                 name='unique_follow',
             )
         ]
-        
         verbose_name = 'Подписка'
         verbose_name_plural = 'Подписки'
 
